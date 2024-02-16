@@ -1,0 +1,54 @@
+﻿@page
+@model BookStash.Pages.Homepages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Homepage[0].BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Homepage[0].AuthorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Homepage[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Homepage[0].Author)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Homepage) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.BookID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.AuthorID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.HomepageID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.HomepageID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.HomepageID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

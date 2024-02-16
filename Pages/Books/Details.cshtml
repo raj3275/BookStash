@@ -1,0 +1,82 @@
+﻿@page
+@model BookStash.Pages.Books.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <div>
+    <img src="../images/@(Model.Book?.BookName).jpg" alt="Book Image" style="max-width: 250px;" />
+    </div>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.BookName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.BookName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.DatePub)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.DatePub)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Publisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Publisher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Language)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Language)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Paperback)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Paperback)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.ISBN10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.ISBN10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.ISBN13)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.ISBN13)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Dimensions)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Dimensions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.BestSellersRank)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.BestSellersRank)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.CustomerReviews)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.CustomerReviews)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Book?.BookID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

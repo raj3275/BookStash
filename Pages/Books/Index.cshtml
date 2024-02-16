@@ -1,0 +1,90 @@
+﻿@page
+@model BookStash.Pages.Books.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].DatePub)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Publisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Paperback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].ISBN10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].ISBN13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Dimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].BestSellersRank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].CustomerReviews)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Book) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePub)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paperback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dimensions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BestSellersRank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerReviews)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BookID" class="btn btn-outline-primary">Edit</a> 
+                <a asp-page="./Details" asp-route-id="@item.BookID" class="btn btn-outline-primary">Details</a> 
+                <a asp-page="./Delete" asp-route-id="@item.BookID" class="btn btn-outline-primary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
