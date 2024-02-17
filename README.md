@@ -1,2 +1,2 @@
-# LibraryDatabase
-This is a Library Database app made in ASP.NET using C#.
+# BookStash
+This is a Book Management app made in ASP.NET using C#.
