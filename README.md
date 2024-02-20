@@ -1,2 +1,2 @@
 # BookStash
-This is a CRUD app made in ASP.NET using C#.
+This is a fully functional CRUD app made in ASP.NET using C#.
